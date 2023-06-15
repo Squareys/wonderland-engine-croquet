@@ -1,5 +1,10 @@
-name: Build
+name: Package and Deploy to GitHub Pages
 on: [push]
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
 
 jobs:
     package:
@@ -30,27 +35,15 @@ jobs:
                   WLE_CREDENTIALS: ${{ secrets.WLE_CREDENTIALS }}
             - name: Gzip
               run: gzip -k public/**/*.*
-            - name: Upload package artifact
-              uses: actions/upload-artifact@v2
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v1
               with:
-                  name: wonderland-engine-examples-deploy
-                  path: public/
+                  path: ./public
+
     deploy-pages:
         needs: package
-        if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
-        permissions:
-            pages: write
-            id-token: write
+        if: ${{ github.ref == github.event.repository.default_branch }}
         steps:
-            - name: Checkout
-              uses: actions/checkout@v1
-            - name: Download package artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: wonderland-engine-examples-deploy
-                  path: public/
             - name: Deploy to GitHub Pages
               uses: actions/deploy-pages@v2
-              with:
-                  artefact_name: wonderland-engine-examples-deploy
