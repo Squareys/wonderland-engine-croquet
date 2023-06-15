@@ -11,6 +11,8 @@ For greater effect, the game logic was extended to 3D.
 
 [View Live](https://squareys.github.io/wonderland-engine-croquet/simple-animation.html).
 
+![Wonderland Engine Croquet Integration - Simple Animation Preview](https://github.com/Squareys/wonderland-engine-croquet/blob/main/.github/video/wle-croquet-simple-animation-short.gif)
+
 ## License
 
 The example code in this repository is licensed under MIT license with
