@@ -139,7 +139,7 @@ export class BallView extends Croquet.View {
 
         /* Make the ball clickable/touchable */
         this.object.addComponent('collision', {
-            group: 1 << 1 /* group 1 */,
+            group: 1 << 0 /* group 0 */,
             extents: [0.2, 0.2, 0.2],
         });
         const t = this.object.addComponent('cursor-target');
