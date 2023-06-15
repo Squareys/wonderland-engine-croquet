@@ -1,0 +1,23 @@
+{
+  "name": "SimpleAnimation",
+  "version": "1.0.0",
+  "description": "My Wonderland project",
+  "main": "js/index.js",
+  "type": "module",
+  "module": "js/index.js",
+  "scripts": {
+    "build": "echo \"The 'build' script is run by the editor and should produce your application bundle\""
+  },
+  "keywords": [
+    "wonderland-engine"
+  ],
+  "dependencies": {
+    "@croquet/croquet": "^1.1.0-27",
+    "@wonderlandengine/api": "^1.0.0",
+    "@wonderlandengine/components": "^1.0.3",
+    "gl-matrix": "^3.4.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
